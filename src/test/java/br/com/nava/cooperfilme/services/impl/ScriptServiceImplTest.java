@@ -13,7 +13,6 @@ import static org.mockito.Mockito.when;
 import java.util.Optional;
 import java.util.UUID;
 
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -61,7 +60,6 @@ class ScriptServiceImplTest {
     }
 
     @Test
-    @DisplayName("Deve criar um roteiro com sucesso, método createScript")
     void shouldCreateScriptSuccessfully() {
         UserDto userMock = UserDtoMock.create("test_user", UUID.randomUUID());
         mockSecurityContext(userMock);
@@ -80,7 +78,6 @@ class ScriptServiceImplTest {
     }
 
     @Test
-    @DisplayName("Deve lancar ScriptAlreadyExistsException, método createScript")
     void shouldThrowScriptAlreadyExistsException() {
         UserDto userMock = UserDtoMock.create("test_user", UUID.randomUUID());
         mockSecurityContext(userMock);
@@ -99,7 +96,6 @@ class ScriptServiceImplTest {
     }
 
     @Test
-    @DisplayName("Deve lancar NotFoundException when script não encontrado, método getScriptStatus")
     void shouldThrowNotFoundExceptionWhenScriptNotFound() {
         UserDto userMock = UserDtoMock.create("test_user", UUID.randomUUID());
         mockSecurityContext(userMock);
@@ -117,7 +113,6 @@ class ScriptServiceImplTest {
     }
 
     @Test
-    @DisplayName("Deve lancar NotFoundException when script encontrado nao pertence ao usuario logado, método getScriptStatus")
     void shouldThrowNotFoundExceptionWhenScriptFoundDoesNotBelongToLoggedUser() {
         UUID uuid1 = UUID.randomUUID();
         UUID uuid2 = UUID.randomUUID();
@@ -138,7 +133,6 @@ class ScriptServiceImplTest {
     }
 
     @Test
-    @DisplayName("Deve retornar o status do roteiro, método getScriptStatus")
     void shouldReturnScriptStatusWhenScriptFound() {
         UUID uuid = UUID.randomUUID();
         UserDto userMock = UserDtoMock.create("test_user", uuid);
@@ -159,12 +153,7 @@ class ScriptServiceImplTest {
     }
 
     @Test
-    @DisplayName("Deve lancar NotFoundException quando os detalhes do roteiro nao sao encontrados, método getScriptDetails")
     void shouldThrowNotFoundExceptionWhenScriptDetailsNotFound() {
-        UUID uuid1 = UUID.randomUUID();
-        UserDto userMock = UserDtoMock.create("test_user", uuid1);
-        mockSecurityContext(userMock);
-
         Integer id = 1;
         when(scriptRepository.findScriptWithDetailsById(id)).thenReturn(Optional.empty());
 
