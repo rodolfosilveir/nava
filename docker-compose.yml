@@ -1,0 +1,29 @@
+services:
+  postgres:
+    image: postgres:14
+    container_name: postgres
+    environment:
+      POSTGRES_DB: cooperfilme-db
+      POSTGRES_USER: cooperfilme-app
+      POSTGRES_PASSWORD: bha@ycb3czy5gfn-YQN
+    ports:
+      - "54321:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  app:
+    build: .
+    container_name: cooperfilme-app
+    environment:
+      DATABASE_URL: jdbc:postgresql://postgres:5432/cooperfilme-db
+      DATABASE_USERNAME_APP: cooperfilme-app
+      DATABASE_PASSWORD_APP: bha@ycb3czy5gfn-YQN
+    depends_on:
+      - postgres
+    ports:
+      - "8080:8080"
+    links:
+      - postgres
+
+volumes:
+  postgres-data:

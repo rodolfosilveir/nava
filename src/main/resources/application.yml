@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: cooperfilme-app
+
+  profiles:
+    active: ${ENV:dev}
+
+api:
+  security:
+      token:
+          security: ${JWT_SECRET:secret-key}

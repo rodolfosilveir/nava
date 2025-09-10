@@ -1,0 +1,5 @@
+spring:
+    datasource:
+        url: ${DATABASE_URL:jdbc:postgresql://localhost:54321/cooperfilme-db}
+        username: ${DATABASE_USERNAME_APP:cooperfilme-app}
+        password: ${DATABASE_PASSWORD_APP}
