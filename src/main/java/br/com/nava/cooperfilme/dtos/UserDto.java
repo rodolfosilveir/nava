@@ -8,6 +8,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import br.com.nava.cooperfilme.entities.UserEntity;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -46,7 +47,7 @@ public class UserDto implements UserDetails{
         return login;
     }
 
-    public static UserDto fromEntity(br.com.nava.cooperfilme.entities.UserEntity entity){
+    public static UserDto fromEntity(UserEntity entity){
         return UserDto.builder()
             .id(entity.getId())
             .login(entity.getLogin())

@@ -9,8 +9,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import br.com.nava.cooperfilme.api.request.CreateScriptRequest;
-import br.com.nava.cooperfilme.api.request.VoteScriptRequest;
+import br.com.nava.cooperfilme.api.requests.CreateScriptRequest;
+import br.com.nava.cooperfilme.api.requests.VoteScriptRequest;
 import br.com.nava.cooperfilme.api.responses.ScriptResponse;
 import br.com.nava.cooperfilme.dtos.Role;
 import br.com.nava.cooperfilme.dtos.ScriptStatus;

@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import br.com.nava.cooperfilme.api.request.CreateScriptRequest;
-import br.com.nava.cooperfilme.api.request.VoteScriptRequest;
+import br.com.nava.cooperfilme.api.requests.CreateScriptRequest;
+import br.com.nava.cooperfilme.api.requests.VoteScriptRequest;
 import br.com.nava.cooperfilme.api.responses.DefaultResponse;
 import br.com.nava.cooperfilme.api.responses.ScriptIdResponse;
 import br.com.nava.cooperfilme.api.responses.ScriptResponse;

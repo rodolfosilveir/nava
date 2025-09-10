@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.security.core.Authentication;
 
 import br.com.nava.cooperfilme.api.UserApi;
-import br.com.nava.cooperfilme.api.request.LoginRequest;
+import br.com.nava.cooperfilme.api.requests.LoginRequest;
 import br.com.nava.cooperfilme.api.responses.DefaultResponse;
 import br.com.nava.cooperfilme.api.responses.LoginResponse;
 import br.com.nava.cooperfilme.dtos.UserDto;

@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import br.com.nava.cooperfilme.api.request.LoginRequest;
+import br.com.nava.cooperfilme.api.requests.LoginRequest;
 import br.com.nava.cooperfilme.api.responses.DefaultResponse;
 import br.com.nava.cooperfilme.api.responses.LoginResponse;
 import io.swagger.v3.oas.annotations.Operation;
