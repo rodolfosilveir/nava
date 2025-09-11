@@ -21,6 +21,7 @@ import org.springframework.security.core.Authentication;
 import br.com.nava.cooperfilme.api.requests.LoginRequest;
 import br.com.nava.cooperfilme.api.responses.DefaultResponse;
 import br.com.nava.cooperfilme.api.responses.LoginResponse;
+import br.com.nava.cooperfilme.dtos.Role;
 import br.com.nava.cooperfilme.dtos.UserDtoMock;
 import br.com.nava.cooperfilme.services.UserService;
 
@@ -43,7 +44,7 @@ class UserControllerTest {
         String login = "login";
         String password = "password";
         String token = "token";
-        Authentication authentication = new UsernamePasswordAuthenticationToken(UserDtoMock.create(login, UUID.randomUUID()), password);
+        Authentication authentication = new UsernamePasswordAuthenticationToken(UserDtoMock.create(login, UUID.randomUUID(), Role.ADMIN), password);
 
         when(authenticationManager.authenticate(any(UsernamePasswordAuthenticationToken.class)))
             .thenReturn(authentication);
